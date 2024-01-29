@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+<style>
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #111111;
+    font-weight: 400;
+}   
+input{
+    width:600px;
+    background-color: #f6faf9;
+    border-radius:  25px;
+    border: none;
+    color: rgb(27, 26, 26);
+    padding: 16px 20px ;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    outline: none ;
+    font-size: 18px;
+    text-align: justify;
+  } 
+
+
+.search{
+    
+    padding:  347px 796px 303px 660px;
+    
+}  
+
+.submit{
+    width: 50px;
+}
+
+.button{
+  background-color: PaleGoldenRod;
+  border:none;
+  color:#0a0909;
+  font-size:15px;
+  padding: 10px 20px;
+  margin:35px 0px 7px 290px;;
+  border-radius:4px;
+  outline:none;
+}
+
+.button:hover{
+  border: 1px solid #0f0f0f;
+  padding: 9px 19px;
+  color:#2c302c;
+  
+}
+
+
+h5{
+  font-size: 40px;
+  text-transform: uppercase;
+  font-family: 'Gambetta', serif;
+  letter-spacing: -3px;
+  transition: 700ms ease;
+  font-variation-settings: "wght" 311;
+  margin-bottom: 0.8rem;
+  color: PaleGoldenRod;
+  outline: none;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+h5:hover {
+  font-variation-settings: "wght" 582; 
+  letter-spacing: 1px;
+}
+
+
+
+</style>
+
+  
+</head>
+
+<body>
+      <div class="search">
+        <form action="/result" method="post">
+          <h5  >URL Shortener</h5>
+            <input  type="text" id="url" name="url" class="justified-input" placeholder="https://example.com" >
+            <button class="button" type="submit">Submit</button>
+        </form>
+      </div>
+    
+   
+</body>
+</html>

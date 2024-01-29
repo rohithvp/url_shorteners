@@ -1,0 +1,17 @@
+
+<html>
+    <head>
+        <h1> Your url is shortened</h1>
+    </head>
+    
+    <body>
+        <p> The shortened url - <a href = "{{ url }}">{{ url }} </a></p>
+        <script>
+            function redirectToLink() {
+                var link = "{{ url }}";
+                window.location.href = link;
+           }
+        </script>
+    </body>
+
+</html>
