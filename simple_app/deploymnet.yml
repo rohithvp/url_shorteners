@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shortenurl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: shortenurl
+        image: rohithvp/short_url:1.0
+        env:
+            - name: USER
+              value: postgres
+            - name: PASSWORD
+              value: password
+            - name: DATABASE
+              value: shorten_url
+            - name: HOST
+              value: postgres
+            - name: DB_PORT
+              value: "5432"
+        ports:
+        - containerPort: 8080 
