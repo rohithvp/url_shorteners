@@ -15,4 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag rohithvp/short_url:$(date +%s)
+      with:
+        registry: docker.io
+        username: rohithvp
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        run: docker build . --file Dockerfile --tag rohithvp/short_url:$(date +%s)
