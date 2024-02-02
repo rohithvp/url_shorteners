@@ -40,7 +40,7 @@ def result( request: Request, url= Form(...)):
         length=len(c)
         if length==0:
             result = db.insert_data(con=con, cur=cur, url=url, random_letters=random_letters)
-            print("printed",len(c),c)
+            print("print",len(c),c)
             print("Updated",result)
 
             return templates.TemplateResponse("result.html", context={"request": request, "url": short_url})
