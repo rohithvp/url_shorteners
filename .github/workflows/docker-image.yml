@@ -13,8 +13,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Login to Docker Hub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
     - name: Build the Docker image
-      run: |
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        docker push rohithvp/short_url:$(date +%s)
+      run: docker build . --file Dockerfile --tag rohithvp/short_url:$(date +%s)
+
+    - name: Push Docker image to Docker Hub
+      run: docker push rohithvp/short_url:$(date +%s)
 
