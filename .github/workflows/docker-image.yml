@@ -15,7 +15,6 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag rohithvp/short_url:$(date +%s)
-      env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        docker push rohithvp/short_url:$(date +%s)
+
