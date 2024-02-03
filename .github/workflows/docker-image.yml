@@ -17,8 +17,13 @@ jobs:
       run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag rohithvp/short_url:$(date +%s)
+      run: |
+        TAG=$(date +%Y%m%d%H%M%S)
+        docker build . --file Dockerfile --tag rohithvp/short_url:$TAG
+        echo $TAG > TAG_FILE
 
     - name: Push Docker image to Docker Hub
-      run: docker push rohithvp/short_url:$(date +%s)
+      run: |
+        TAG=$(cat TAG_FILE)
+        docker push rohithvp/short_url:$TAG
 
