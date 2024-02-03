@@ -18,7 +18,7 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        TAG=$(date +%Y%m%d%H%M%S)
+        TAG=$(date +%Y%m%d)
         docker build . --file Dockerfile --tag rohithvp/short_url:$TAG
         echo $TAG > TAG_FILE
 
