@@ -45,7 +45,7 @@ def result( request: Request, url= Form(...)):
 
             return templates.TemplateResponse("result.html", context={"request": request, "url": short_url})
         else:
-            print(" updated")
+            print(" updated ")
             return templates.TemplateResponse("result.html", context={"request": request, "url": short_url})
 
     except Exception as e:
