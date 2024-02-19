@@ -30,7 +30,7 @@ async def favicon():
 def result( request: Request, url= Form(...)): 
     global urls
     random_letters= "".join(random.choice(string.ascii_lowercase + string.digits) for _ in range(4))
-    short_url= "http://192.168.49.2:30032/"+random_letters
+    short_url= "http://192.168.49.2:31412/"+random_letters
     print(short_url)
     urls[random_letters] = url
     con, cur = db.getcon()  
